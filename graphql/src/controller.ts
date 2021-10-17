@@ -1,7 +1,15 @@
 import { movies } from "./db";
-import { Movie } from "./types";
+import { Movie, Genre } from "./types";
 
-export function getMovies(search?: string): Movie[] {
+export function getMovies(search?: string): any {
     // TODO
-    return movies
+    if(search != null && search.length != 0) {
+        return movies.filter((e) => e.title.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+    } else {
+        return movies
+    }
+}
+
+export function getMoviesByID(id: Number | undefined) {
+    return movies.find((movie) => movie.id === id)
 }

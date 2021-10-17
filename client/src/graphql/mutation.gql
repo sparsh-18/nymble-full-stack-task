@@ -1,0 +1,5 @@
+mutation addRating($id: String, $rating: String) {
+  addRating(id: $id, rating: $rating) {
+    title
+  }
+}

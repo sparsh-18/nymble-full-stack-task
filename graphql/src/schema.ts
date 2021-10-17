@@ -12,6 +12,7 @@ const typeDefs = gql`
         vote_count: Int!
         adult: Boolean!
         genre_ids: [Int!]!
+        genres: [Genre!]!
     }
 
     type Genre {
@@ -21,12 +22,12 @@ const typeDefs = gql`
 
     type Query {
         movies(search: String): [Movie!]!
-        genres: [Genre!]!
+        movie(id: Int): Movie!
     }
 
-    # type Mutation {
-        # addRating(...): Movie!
-    # }
+    type Mutation {
+        addRating(id: String, rating: String): Movie!
+    }
 
 `
 

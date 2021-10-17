@@ -1,0 +1,16 @@
+query($search: String!) {
+  movies(search: $search) {
+    id
+    title
+    release_date
+    popularity
+    overview
+    vote_average
+    vote_count
+    adult
+    genres{
+      id
+      name
+    }
+  }
+}
